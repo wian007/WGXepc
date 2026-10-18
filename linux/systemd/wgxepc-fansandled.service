@@ -1,0 +1,12 @@
+[Unit]
+Description=WGXepc fan/LED setup at boot (Watchguard Firebox)
+After=lcdproc.service
+Wants=lcdproc.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/99-fansandled.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
